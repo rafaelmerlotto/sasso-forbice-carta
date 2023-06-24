@@ -1,12 +1,11 @@
 
 
-const giocatore1 = document.querySelector('.giocatore1');
-const giocatore2 = document.querySelector('.giocatore2');
+const player1 = document.querySelector('.player1');
+const player2 = document.querySelector('.player2');
 const btn = document.querySelector('.btn');
 const messaggio = document.querySelector('.messaggio')
 const user1 = document.querySelector(".user1");
 const user2 = document.querySelector(".user2");
-const listato = document.querySelector(".listato");
 const counter = document.querySelector('.counter');
 const modale = document.querySelector('modal');
 const giocaDiNuovo = document.querySelector('.giocaDiNuovo')
@@ -20,22 +19,22 @@ btn.addEventListener('click', mossePossibile);
 giocaDiNuovo.addEventListener('click', () => location.reload());
 
 function mossePossibile() {
-    const armi = ['🪨', '📄', '✂️'];
-    const giocata1 = armi[Math.floor(Math.random() * armi.length)];
-    const giocata2 = armi[Math.floor(Math.random() * armi.length)];
+    const sceltePossibili = ['🪨', '📄', '✂️'];
+    const mossa1 = sceltePossibili[Math.floor(Math.random() * sceltePossibili.length)];
+    const mossa2 = sceltePossibili[Math.floor(Math.random() * sceltePossibili.length)];
 
-    giocatore1.innerText = giocata1;
-    giocatore2.innerText = giocata2;
+    player1.innerText = mossa1;
+    player2.innerText = mossa2;
 
 
-    determinaVittoria(giocata1, giocata2);
+    determinaVittoria(mossa1, mossa2);
 }
 
-function determinaVittoria(mossaGiocatore1, mossaGiocatore2) {
+function determinaVittoria(mossaPlayer1, mossaPlayer2) {
     if (
-        (mossaGiocatore1 === "📄" && mossaGiocatore2 === "🪨") ||
-        (mossaGiocatore1 === "✂️" && mossaGiocatore2 === "📄") ||
-        (mossaGiocatore1 === "🪨" && mossaGiocatore2 === "✂️")
+        (mossaPlayer1 === "📄" && mossaPlayer2 === "🪨") ||
+        (mossaPlayer1 === "✂️" && mossaPlayer2 === "📄") ||
+        (mossaPlayer1 === "🪨" && mossaPlayer2 === "✂️")
     ) {
         punteggio1++;
         if (punteggio1 === 3) {
@@ -45,9 +44,9 @@ function determinaVittoria(mossaGiocatore1, mossaGiocatore2) {
             modale.removeAttribute('hidden');
         }
     } else if (
-        (mossaGiocatore1 === "🪨" && mossaGiocatore2 === "📄") ||
-        (mossaGiocatore1 === "📄" && mossaGiocatore2 === "✂️") ||
-        (mossaGiocatore1 === "✂️" && mossaGiocatore2 === "🪨")
+        (mossaPlayer1 === "🪨" && mossaPlayer2 === "📄") ||
+        (mossaPlayer1 === "📄" && mossaPlayer2 === "✂️") ||
+        (mossaPlayer1 === "✂️" && mossaPlayer2 === "🪨")
     ) {
         punteggio2++;
         if (punteggio2 === 3) {

@@ -22,7 +22,7 @@ body{
 
 }
 
-.giocatori {
+.players {
     width: 100%;
     height: 100%;
    
@@ -33,7 +33,7 @@ body{
     
 }
 
-.giocatore1, .giocatore2 {
+.player1, .player2 {
     width: 100%;
     height: 100%;
     border: 2px solid black;
@@ -138,10 +138,10 @@ body.vittoria::after {
         width: 157px;
         margin: 30px 15px 10px 15px;
     }
-    .giocatore1, .giocatore2{
+    .player1, .player2{
         font-size: 80px;
     }
-    .giocatori{
+    .players{
         width: 100%;
         height: 50%;
     }
